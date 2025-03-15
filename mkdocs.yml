@@ -1,0 +1,9 @@
+site_name: cambrian docs
+site_url: https://cambrian.one
+plugins:
+  - pagetree
+  - mermaid2  
+theme:
+  # name: readthedocs
+  name: material
+# docs_dir: out
