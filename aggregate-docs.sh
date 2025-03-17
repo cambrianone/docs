@@ -30,7 +30,7 @@ for REPO in "${REPOS[@]}"; do
     fi
 
     # Copy documentation files
-    SRC_DOCS="$REPO_DIR/docs"
+    SRC_DOCS="$REPO_DIR"
     DEST_DOCS="$DOCS_DIR/$NAME"
     if [ -d "$DEST_DOCS" ]; then
         rm -rf "$DEST_DOCS"
