@@ -8,6 +8,9 @@ REPOS=(
 DOCS_DIR="docs"
 ACCESS_TOKEN=$ACCESS_TOKEN  # Use the PAT from environment variables
 
+mkdir -p $DOCS_DIR
+cp *.md $DOCS_DIR
+
 for REPO in "${REPOS[@]}"; do
     URL=$(echo $REPO | cut -d' ' -f1)
     NAME=$(echo $REPO | cut -d' ' -f2)
