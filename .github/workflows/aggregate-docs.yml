@@ -27,6 +27,10 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}  # Use the PAT for authentication
         run: |
           ./aggregate-docs.sh
+          
+      - name: Debug
+        run: |
+          find .
 
       - name: Build MkDocs site
         run: mkdocs build
