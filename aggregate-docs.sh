@@ -36,7 +36,7 @@ for REPO in "${REPOS[@]}"; do
         rm -rf "$DEST_DOCS"
     fi
     mkdir -p "$DEST_DOCS"
-    rsync -avP --include "*.[Mm][Dd]" --include '*/' --exclude '*' --exclude "CHANGELOG.md" --prune-empty-dirs "$SRC_DOCS/" "$DEST_DOCS"
+    rsync -avP  --exclude "*/*/*" --include "*.[Mm][Dd]" --include '*/' --exclude '*' --prune-empty-dirs "$SRC_DOCS/" "$DEST_DOCS"
     # cp -r "$SRC_DOCS" "$DEST_DOCS"
     echo "Copied docs from $NAME to $DEST_DOCS"
 done
