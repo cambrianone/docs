@@ -1,0 +1,985 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cambrian.one/camb-mvp/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="docs/cli-flow/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Running - cambrian docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_pagetree_plugin.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="cambrian docs" class="md-header__button md-logo" aria-label="cambrian docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cambrian docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="cambrian docs" class="md-nav__button md-logo" aria-label="cambrian docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cambrian docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cambrian docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Camb mvp
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Camb mvp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Running
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Running
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-cli-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing CLI utility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambrian-cli-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambrian CLI utility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cambrian CLI utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avs-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVS management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-node-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator node management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running payload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project scaffolding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating oracle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-payload_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running payload
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docs/cli-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cambrian Utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solana threshold signature program
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Solana threshold signature program
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solana-threshold-signature-program/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    solana-threshold-signature-program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solana-threshold-signature-program/scheme/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scheme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solana-threshold-signature-program/docs/NcnVaultOperatorLink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jito Restaking and Vault Program Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solana-threshold-signature-program/docs/PoaExecutionWithJitoRestaking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proof-of-Authority (PoA) Program Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-cli-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing CLI utility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cambrian-cli-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambrian CLI utility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cambrian CLI utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avs-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVS management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-node-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator node management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running payload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-scaffolding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project scaffolding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating oracle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-payload_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running payload
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="running">Running</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>node.js &gt;= 22.0.0</li>
+<li>yarn &gt;= 1.22.0 (can be installed using <code>sudo npm i -g yarn</code>)</li>
+<li>docker &gt;= 20.0.0</li>
+</ul>
+<h2 id="installing-cli-utility">Installing CLI utility</h2>
+<pre><code>npm i --global @cambrianone/camb-client@latest
+</code></pre>
+<h2 id="cambrian-cli-utility">Cambrian CLI utility</h2>
+<h3 id="avs-management">AVS management</h3>
+<ul>
+<li><code>camb avs run [-d, --detach] [-v, --verbose] [-u, --update]</code> - run AVS</li>
+<li><code>camb avs stop</code> - stop AVS</li>
+<li><code>camb avs list</code> - list AVS instances</li>
+</ul>
+<h3 id="operator-node-management">Operator node management</h3>
+<ul>
+<li><code>camb operator list -a &lt;AVS public key&gt;</code> - list operator nodes</li>
+<li><code>camb operator run [-d, --detach] [-v, --verbose] [-u, --update] &lt;operator public key&gt;</code> - run operator node</li>
+<li><code>camb operator stop &lt;operator public key&gt;</code> - stop operator node</li>
+<li><code>camb operator info [&lt;operator public key&gt;]</code> - get operator node(s) info</li>
+</ul>
+<h3 id="running-payload">Running payload</h3>
+<ul>
+<li><code>camb payload run-container -a &lt;AVS public key | AVS URL&gt; [-p period in seconds] &lt;payload container image&gt;</code> - Run payload from container for the given AVS</li>
+</ul>
+<h3 id="project-scaffolding">Project scaffolding</h3>
+<ul>
+<li><code>camb init -t AVS &lt;output directory&gt;</code> - scaffold AVS project</li>
+<li><code>camb init -t operator &lt;output directory&gt;</code> - scaffold operator project</li>
+</ul>
+<h3 id="management">Management</h3>
+<ul>
+<li><code>camb manage poa get-state -a &lt;AVS public key&gt;</code> - get PoA state</li>
+<li><code>camb manage poa init -a &lt;AVS public key&gt;</code> - initialize PoA</li>
+<li><code>camb manage poa set-threshold -a &lt;AVS public key&gt; threshold</code> - update threshold in PoA</li>
+<li><code>camb manage add-external -n &lt;service name&gt; -p &lt;path to AVS/operator directory&gt; -i &lt;external service container image&gt; [-e &lt;NAME1=VALUE1...&gt;]</code> - add external service to run with existing AVS/operator</li>
+</ul>
+<h2 id="flow">Flow</h2>
+<p><a href="docs/cli-flow/">Detailed flow</a></p>
+<ul>
+<li>Scaffold AVS: <code>camb proposal init -t AVS &lt;output directory&gt;</code></li>
+<li>Run AVS: <code>camb avs run -u -v &lt;AVS public key&gt;</code></li>
+<li>List registered operators: <code>camb operator list -a &lt;AVS public key&gt;</code></li>
+<li>Build oracle update image: <code>git clone https://github.com/cambrianone/oracle-update-examples &amp;&amp; docker build -t oracle-update-current-date ./oracle-update-examples/current-date/container-stream</code></li>
+<li>Build payload image: <code>git clone https://github.com/cambrianone/payload-images &amp;&amp; docker build -t payload-check-oracle ./payload-images/check-oracle</code></li>
+<li>Scaffold operator(s) and choose <code>container-stream</code> as oracle update method and set <code>oracle-update-current-date</code> as oracle update container image: <code>camb proposal init -t operator &lt;output directory&gt;</code>, you can find an admin private key in <code>~/.cambrian/config.toml</code></li>
+<li>Run operator(s): <code>camb operator run -a &lt;AVS public key&gt; -v &lt;voter public key&gt;</code></li>
+<li>Run payload: <code>camb payload run-container -a &lt;AVS public key | AVS URL&gt; payload-check-oracle</code></li>
+</ul>
+<h2 id="updating-oracle">Updating oracle</h2>
+<p>There are 4 ways of updating oracle data:</p>
+<ul>
+<li>Streaming container (<code>container-stream</code> option while scaffolding operator) - container <a href="https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/container-stream/src/index.ts">periodically writes string data to stdout</a>, operator stores this chunks of data on-chain</li>
+<li>Running container (<code>container-run</code> option while scaffolding operator) - operator starts container with periods specified by a cron spec. Container should <a href="https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/container-run/src/index.ts#L2">write some string data into stdout and then it exits with code 0</a>. Operator stores this data on-chain.</li>
+<li>[DEPRECATED] Running typescript/javascript code (<code>file-run</code> option while scaffolding operator) - operator should execute a code from the given file with periods specified by a cron spec. This code should <a href="https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/file-run/index.ts">write some string data into stdout and then child process exits with code 0</a>. Operator stores this data on-chain.</li>
+<li>[DEPRECATED] Streaming typescript/javascript code (Not implemented yet).</li>
+</ul>
+<h2 id="running-payload_1">Running payload</h2>
+<p>There are two ways of executing payload:</p>
+<ul>
+<li>From a container (recommended way, using <code>camb payload run-container</code> command)</li>
+<li>From a typescript/javascript code (deprecated way, using <code>camb payload run-file</code>)</li>
+</ul>
+<p>Container receives a parameter serialized as JSON-object.
+It's type is:</p>
+<pre><code class="language-typescript">type TPayloadInput = {
+  executorPDA: string;
+  apiUrl: string;
+  extraSigners: Array&lt;string&gt;;
+}
+
+</code></pre>
+<p><code>extraSigners</code> represents an optional array of serialized private keys used for signing transaction.</p>
+<p>Container should write a JSON-stringified object.
+It's type is:</p>
+<pre><code class="language-typescript">type TPayloadOutput = {
+  proposalInstructions: Array&lt;{
+    accounts: Array&lt;{
+      address: string;
+      role: 0 | 1 | 2 | 3    
+    }&gt;,
+    data: string;
+    programmAddress: string;
+  }&gt;;
+}
+</code></pre>
+<p>where <code>data</code> is base58-serialized data buffer and <code>role</code> is the following enum:</p>
+<pre><code class="language-typescript">enum AccountRole {
+    // Bitflag guide: is signer ⌄⌄ is writable
+    WRITABLE_SIGNER = /* 3 */ 0b11,
+    READONLY_SIGNER = /* 2 */ 0b10,
+    WRITABLE =        /* 1 */ 0b01,
+    READONLY =        /* 0 */ 0b00,
+}
+</code></pre>
+<h1 id="running-in-development-mode">Running in development mode</h1>
+<h2 id="start">Start</h2>
+<pre><code class="language-bash">yarn set version berry
+yarn config set nodeLinker node-modules
+yarn config set enableGlobalCache false
+yarn workspaces foreach -A install
+yarn build:packages
+LOG_LEVEL=debug docker compose -f docker/docker-compose.yml up
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-bash">curl -v -kisL http://localhost:3000/upload -F &quot;file=@./services/camb-operator/src/test/payload-demo.ts&quot;
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<h3 id="environment-variables">Environment variables</h3>
+<h4 id="camb-operator">camb-operator</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default value</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WS_URL</code></td>
+<td>AVS WebSocket URL</td>
+<td><code>ws://localhost:3001/</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>WALLET_KEY</code></td>
+<td>Wallet private key as an array of integers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>OPERATOR_KEY</code></td>
+<td>Operator private key as an array of integers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>API_URL</code></td>
+<td>Solana RPC URL</td>
+<td><code>https://devnet.helius-rpc.com/?api-key=e3278038-4bfb-4b21-bb4c-c6203303cc70</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../assets/mkdocs_pagetree_plugin.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://cambrian.one/camb-mvp/docs/cli-flow/" rel="canonical"/>
+<link href="../../" rel="prev"/>
+<link href="../../../solana-threshold-signature-program/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.9" name="generator"/>
+<title>Cambrian Utility - cambrian docs</title>
+<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/mkdocs_pagetree_plugin.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cambrian-utility">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="cambrian docs" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="cambrian docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            cambrian docs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Cambrian Utility
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="cambrian docs" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="cambrian docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    cambrian docs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Cambrian docs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Camb mvp
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Camb mvp
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Running
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Docs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Cambrian Utility
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Cambrian Utility
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+<span class="md-ellipsis">
+      Prerequisites
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-cambrian-utility">
+<span class="md-ellipsis">
+      Installing Cambrian utility
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#initialization">
+<span class="md-ellipsis">
+      Initialization
+    </span>
+</a>
+<nav aria-label="Initialization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffold-avs-and-initialize-poa-onchain">
+<span class="md-ellipsis">
+      Scaffold AVS and initialize PoA onchain
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-installed-avs-instances">
+<span class="md-ellipsis">
+      List installed AVS instances
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-avs">
+<span class="md-ellipsis">
+      Start AVS:
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffold-operators-and-initialize-them-onchain">
+<span class="md-ellipsis">
+      Scaffold operators and initialize them onchain
+    </span>
+</a>
+<nav aria-label="Scaffold operators and initialize them onchain" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updating-oracle-data">
+<span class="md-ellipsis">
+      Updating oracle data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffolding-operators">
+<span class="md-ellipsis">
+      Scaffolding operators
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#running-components">
+<span class="md-ellipsis">
+      Running components
+    </span>
+</a>
+<nav aria-label="Running components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-installed-operator-nodes-outputs-voter-public-keys">
+<span class="md-ellipsis">
+      List installed operator nodes (outputs voter public keys)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-operators">
+<span class="md-ellipsis">
+      Start operators:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#executing-proposal">
+<span class="md-ellipsis">
+      Executing proposal
+    </span>
+</a>
+<nav aria-label="Executing proposal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#running-payload">
+<span class="md-ellipsis">
+      Running payload
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-payload-container-image">
+<span class="md-ellipsis">
+      Build payload container image
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-payload">
+<span class="md-ellipsis">
+      Run payload
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Solana threshold signature program
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Solana threshold signature program
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../solana-threshold-signature-program/">
+<span class="md-ellipsis">
+    solana-threshold-signature-program
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../solana-threshold-signature-program/scheme/">
+<span class="md-ellipsis">
+    Scheme
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Docs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../solana-threshold-signature-program/docs/NcnVaultOperatorLink/">
+<span class="md-ellipsis">
+    Jito Restaking and Vault Program Documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../solana-threshold-signature-program/docs/PoaExecutionWithJitoRestaking/">
+<span class="md-ellipsis">
+    Proof-of-Authority (PoA) Program Documentation
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+<span class="md-ellipsis">
+      Prerequisites
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-cambrian-utility">
+<span class="md-ellipsis">
+      Installing Cambrian utility
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#initialization">
+<span class="md-ellipsis">
+      Initialization
+    </span>
+</a>
+<nav aria-label="Initialization" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffold-avs-and-initialize-poa-onchain">
+<span class="md-ellipsis">
+      Scaffold AVS and initialize PoA onchain
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-installed-avs-instances">
+<span class="md-ellipsis">
+      List installed AVS instances
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-avs">
+<span class="md-ellipsis">
+      Start AVS:
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffold-operators-and-initialize-them-onchain">
+<span class="md-ellipsis">
+      Scaffold operators and initialize them onchain
+    </span>
+</a>
+<nav aria-label="Scaffold operators and initialize them onchain" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updating-oracle-data">
+<span class="md-ellipsis">
+      Updating oracle data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scaffolding-operators">
+<span class="md-ellipsis">
+      Scaffolding operators
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#running-components">
+<span class="md-ellipsis">
+      Running components
+    </span>
+</a>
+<nav aria-label="Running components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-installed-operator-nodes-outputs-voter-public-keys">
+<span class="md-ellipsis">
+      List installed operator nodes (outputs voter public keys)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start-operators">
+<span class="md-ellipsis">
+      Start operators:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#executing-proposal">
+<span class="md-ellipsis">
+      Executing proposal
+    </span>
+</a>
+<nav aria-label="Executing proposal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#running-payload">
+<span class="md-ellipsis">
+      Running payload
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-payload-container-image">
+<span class="md-ellipsis">
+      Build payload container image
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-payload">
+<span class="md-ellipsis">
+      Run payload
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="cambrian-utility">Cambrian Utility</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>node.js &gt;= 22.0.0</li>
+<li>docker &gt;= 20.0.0</li>
+</ul>
+<h2 id="installing-cambrian-utility">Installing Cambrian utility</h2>
+<pre><code>npm i --global @cambrianone/camb-client@latest
+</code></pre>
+<h2 id="initialization">Initialization</h2>
+<div class="mermaid">flowchart TB
+    subgraph Offchain
+        avs[AVS]
+
+        subgraph Operators
+            operator1[Operator1]
+            operator2[Operator2]
+            operator3[Operator3]
+        end
+
+    end
+
+    subgraph Onchain
+        poa[Cambrian PoA program]
+
+        oracle[Cambrian Oracle program]
+
+        jito-restaking[Jito Restaking program]
+
+        jito-vault[Jito Vault program]
+    end
+
+    cli["Cambrian CLI utility"]
+
+    cli --&gt; |1.1 Scaffolds AVS| avs
+    cli --&gt; |1.2 Scaffolds Operators| Operators
+    cli --&gt; |1.3 Initializes PoA and operators onchain| Onchain
+
+</div>
+<h3 id="scaffold-avs-and-initialize-poa-onchain">Scaffold AVS and initialize PoA onchain</h3>
+<pre><code class="language-bash">camb init -t avs &lt;AVS directory&gt;
+</code></pre>
+<p>Explaining wizard:</p>
+<ul>
+<li><code>Enter AVS IP address to bind to</code> - provide an IP address to bind to, it should be reachable from all the operators</li>
+<li><code>Enter AVS HTTP port to bind to</code> - provide an HTTP port to bind to, it should be reachable from all the operators</li>
+<li><code>Enter AVS WS port to bind to</code> - provide a WebSockers port to bind to, it should be reachable from all the operators</li>
+<li><code>Enter admin private key or press enter to generate a new one</code> - admin private key / keypair as array of <code>uint8</code> or as base58-encoded string</li>
+<li><code>Enter Solana API URL or press enter to use default</code> - Solana JSON RPC endpoint</li>
+<li><code>Enter Solana API WS URL or press enter to use default</code> - Solana WebSockets endpoint</li>
+<li><code>Enter Cambrian Consensus Program name or press enter to generate a new one</code> - string identifier (name) of the Cambrian Consensus Program (CCP) instance (aka PoA name)</li>
+<li><code>Enter proposal storage key or press enter to generate a new one</code> - unique string key for the proposal storage</li>
+<li><code>Enter storage space</code> - common oracle storage space, in bytes</li>
+<li><code>Enter consensus threshold</code> - The minimum number of operators required to approve a proposal before execution</li>
+<li><code>Enter stake threshold</code> - The <strong>minimum stake</strong> required for an operator to participate in CCP</li>
+</ul>
+<h3 id="list-installed-avs-instances">List installed AVS instances</h3>
+<pre><code class="language-bash">camb avs list
+</code></pre>
+<h3 id="start-avs">Start AVS:</h3>
+<pre><code class="language-bash">camb avs run -u &lt;AVS pubkey&gt;
+</code></pre>
+<h3 id="scaffold-operators-and-initialize-them-onchain">Scaffold operators and initialize them onchain</h3>
+<p><a id="updating_oracle_data"></a></p>
+<h4 id="updating-oracle-data">Updating oracle data</h4>
+<p>There are 4 ways of updating oracle data:</p>
+<ul>
+<li>[RECOMMENDED] Streaming container (<code>container-stream</code> option while scaffolding operator) - container <a href="https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/container-stream/src/index.ts">periodically writes string data to stdout</a>, operator stores this chunks of data on-chain</li>
+<li>Running container (<code>container-run</code> option while scaffolding operator) - operator starts container with periods specified by a cron spec. Container should <a href="https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/container-run/src/index.ts#L2">write some string data into stdout and then it exits with code 0</a>. Operator stores this data on-chain.</li>
+</ul>
+<!-- - [DEPRECATED] Running typescript/javascript code (`file-run` option while scaffolding operator) - operator should execute a code from the given file with periods specified by a cron spec. This code should [write some string data into stdout and then child process exits with code 0](https://github.com/cambrianone/oracle-update-examples/blob/master/current-date/file-run/index.ts). Operator stores this data on-chain. -->
+<!-- - [DEPRECATED] Streaming typescript/javascript code (Not implemented yet). -->
+<p>Build Oracle Update Container image:</p>
+<pre><code class="language-bash">git clone https://github.com/cambrianone/oracle-update-examples
+cd ./oracle-update-examples/current-date/container-stream
+docker build -t oracle-update-current-date .
+</code></pre>
+<h4 id="scaffolding-operators">Scaffolding operators</h4>
+<p>Before scaffolding the operators make sure instance of AVS is already running.</p>
+<pre><code class="language-bash">camb init -t operator &lt;operator 1 directory&gt;
+camb init -t operator &lt;operator 2 directory&gt;
+camb init -t operator &lt;operator 3 directory&gt;
+</code></pre>
+<p>Explaining wizard:</p>
+<ul>
+<li><code>Enter AVS HTTP URL</code> - AVS HTTP endpoint</li>
+<li><code>Enter AVS WS URL</code> - AVS WebSockets endpoint</li>
+<li><code>Enter oracle update method</code> - one of the oracle update methods explained in <a href="#updating-oracle-data">Updating oracle data</a></li>
+<li><code>Enter image for oracle update container</code> - image name for the oracle update container (<code>oracle-update-current-date</code> from the example in <a href="#updating-oracle-data">Updating oracle data</a>)</li>
+<li><code>Enter cron specification for oracle update</code> (applicable to <code>container-run</code> update method) - CRON specification for running oracle update container</li>
+<li><code>Enter optional command for oracle update container</code> - (optional) command for running oracle update container</li>
+<li><code>Enter optional env for oracle update container</code> - (optional) environment for oracle update container in format <code>VAR1=VAL1 VAR2=VAL2</code></li>
+</ul>
+<p>After initialization of AVS and operators you can optionally add an external service to run it alongside with AVS or operator instances:</p>
+<pre><code class="language-bash">camb manage add-external -n &lt;service name&gt; -p &lt;path to AVS/operator directory&gt; -i &lt;external service container image&gt; [-e &lt;NAME1=VALUE1...&gt;]
+</code></pre>
+<p>This command will create a boilerplate section for external service in AVS/operator docker-compose file. You can customize it later.</p>
+<h2 id="running-components">Running components</h2>
+<div class="mermaid">flowchart LR
+    subgraph Offchain
+        avs[AVS]
+
+        subgraph Operators
+            operator1[Operator1]
+            operator2[Operator2]
+            operator3[Operator3]
+            oracle-datasource-container1(["Oracle Datasource 
+            Container"])
+            oracle-datasource-container2(["Oracle Datasource 
+            Container"])
+            oracle-datasource-container3(["Oracle Datasource 
+            Container"])
+        end
+
+    end
+
+    subgraph Onchain
+        poa[Cambrian PoA program]
+
+        oracle[Cambrian Oracle program]
+
+        jito-restaking[Jito Restaking program]
+
+        jito-vault[Jito Vault program]
+    end
+
+    cli["Cambrian CLI utility"]
+
+    oracle-datasource-container1--&gt; |Streaming data for oracle| operator1
+    oracle-datasource-container2--&gt; |Streaming data for oracle| operator2
+    oracle-datasource-container3--&gt; |Streaming data for oracle| operator3
+
+    cli --&gt; |2.1 Starts AVS| avs
+    cli --&gt; |2.2 Starts Operators| Operators
+
+    Operators --&gt; |Update oracle periodically| oracle
+</div>
+<h3 id="list-installed-operator-nodes-outputs-voter-public-keys">List installed operator nodes (outputs voter public keys)</h3>
+<pre><code class="language-bash">camb operator list -a &lt;AVS public key&gt;
+</code></pre>
+<h3 id="start-operators">Start operators:</h3>
+<pre><code class="language-bash">camb operator run -u &lt;voter public key&gt;
+</code></pre>
+<ul>
+<li>After start each operator run its own Oracle Datasource Container (ODC)</li>
+<li>ODC streams string data into stdout. Every chunk of this data operator will store onchain invoking Oracle Program </li>
+</ul>
+<h2 id="executing-proposal">Executing proposal</h2>
+<div class="mermaid">flowchart TB
+    subgraph Offchain
+        avs[AVS]
+
+        subgraph Operators
+            operator1[Operator1]
+            operator2[Operator2]
+            operator3[Operator3]
+            payload-container1([Payload Container])
+            payload-container2([Payload Container])
+            payload-container3([Payload Container])
+            oracle-datasource-container1(["Oracle Datasource 
+            Container"])
+            oracle-datasource-container2(["Oracle Datasource 
+            Container"])
+            oracle-datasource-container3(["Oracle Datasource 
+            Container"])
+        end
+
+    end
+
+    subgraph Onchain
+        poa[Cambrian PoA program]
+
+        oracle[Cambrian Oracle program]
+
+        jito-restaking[Jito Restaking program]
+
+        jito-vault[Jito Vault program]
+    end
+
+    cli["Cambrian CLI utility"]
+
+    oracle-datasource-container1--&gt; |Streaming data for oracle| operator1
+    oracle-datasource-container2--&gt; |Streaming data for oracle| operator2
+    oracle-datasource-container3--&gt; |Streaming data for oracle| operator3
+
+    Operators --&gt; |Update oracle periodically| oracle
+
+    cli --&gt; |3.1 Sends name of payload container image to AVS| avs
+    avs --&gt; |3.2 Broadcasts name of payload container image to Operators| Operators
+
+    operator1 --&gt; |3.3 Starts container| payload-container1
+    payload-container1 --&gt; |3.4 Returns proposal instructions| operator1
+
+    operator2 --&gt; |3.3 Starts container| payload-container2
+    payload-container2 --&gt; |3.4 Returns proposal instructions| operator2
+
+    operator3 --&gt; |3.3 Starts container| payload-container3
+    payload-container3 --&gt; |3.4 Returns proposal instructions| operator3
+
+    Operators --&gt; |3.5 Send proposal instructions| poa
+</div>
+<h3 id="running-payload">Running payload</h3>
+<p>There are two ways of executing payload:</p>
+<ul>
+<li>From a container (recommended way, using <code>camb payload run-container</code> command)</li>
+<li>From a typescript/javascript code (deprecated way, using <code>camb payload run-file</code>)</li>
+</ul>
+<p>Container receives a parameter serialized as JSON-object.
+It's type is:</p>
+<pre><code class="language-typescript">type TPayloadInput = {
+  executorPDA: string;
+  apiUrl: string;
+  extraSigners: Array&lt;string&gt;;
+  poaName: string;
+  proposalStorageKey: string;
+}
+
+</code></pre>
+<p><code>extraSigners</code> represents an optional array of serialized private keys used for signing transaction.</p>
+<p>Container should write a JSON-stringified object.
+It's type is:</p>
+<pre><code class="language-typescript">type TPayloadOutput = {
+  proposalInstructions: Array&lt;{
+    accounts: Array&lt;{
+      address: string;
+      role: 0 | 1 | 2 | 3    
+    }&gt;,
+    data: string;
+    programmAddress: string;
+  }&gt;;
+}
+</code></pre>
+<p>where <code>data</code> is base58-serialized data buffer and <code>role</code> is the following enum:</p>
+<pre><code class="language-typescript">enum AccountRole {
+    // Bitflag guide: is signer ⌄⌄ is writable
+    WRITABLE_SIGNER = /* 3 */ 0b11,
+    READONLY_SIGNER = /* 2 */ 0b10,
+    WRITABLE =        /* 1 */ 0b01,
+    READONLY =        /* 0 */ 0b00,
+}
+</code></pre>
+<h3 id="build-payload-container-image">Build payload container image</h3>
+<pre><code class="language-bash">git clone https://github.com/cambrianone/payload-images
+cd ./payload-images/check-oracle
+docker build -t payload-check-oracle .
+</code></pre>
+<h3 id="run-payload">Run payload</h3>
+<p>Send image name of payload container from the previous step (<code>payload-check-oracle</code>) to the AVS instance</p>
+<pre><code class="language-bash">camb payload run-container -a &lt;AVS public key | AVS URL&gt; -p [period in seconds] payload-check-oracle
+</code></pre>
+<ul>
+<li>AVS broadcasts payload container image name to running operators</li>
+<li>Operators run payload containers</li>
+<li>Payload containers return proposal instructions</li>
+<li>Operators invoke <code>handle_proposal</code> instruction in PoA program with these proposal instructions</li>
+<li>If <code>-p/--period</code> option has been specified, this command will run handling a repeatable proposal with specified locking period (which means you cannot execute another proposal within this period). Otherwise this command will run one-shot proposal (which means you can only execute a proposal once).</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script src="../../../assets/mkdocs_pagetree_plugin.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
