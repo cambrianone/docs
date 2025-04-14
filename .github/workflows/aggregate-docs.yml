@@ -8,6 +8,10 @@ on:
 
 jobs:
   aggregate:
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
